@@ -1,0 +1,14 @@
+/*RESET*/
+html, body, .wrapper {
+    margin: 0;
+    height: 100%;
+    width: 100vw;
+}
+
+h1, h2, h3, h4, h5, p, a {
+    margin: 0;
+}
+
+.hidden {
+    visibility: hidden;
+}
