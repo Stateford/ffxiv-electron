@@ -2,9 +2,93 @@
 html, body, .wrapper {
     margin: 0;
     height: 100%;
-    width: 100vw;
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, p, a {
     margin: 0;
+}
+
+/*
+* MAIN BODY STYLE
+*/
+/*BACKGROUND*/
+.wrapper {
+    background-color: #2F2F2F;
+    border-color: #8E8A67;
+    border-radius: 1px;
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+/*MAINBODY*/
+.mainbody {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/*HEADER*/
+.heading {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
+
+.title {
+    display: inline-block;
+}
+
+#title {
+    color: #D1D1D1;
+    display: inline-block;
+}
+
+#close {
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+    -webkit-app-region: no-drag;
+}
+
+#exit {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+/*BREAK*/
+.split {
+    color: #1C1C1A;
+    width: 98%;
+    height: 2px;
+    display: block;
+    border: 1px inset rgb(120, 125, 119);
+    margin: 0 auto;
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+
+/*INPUT AREA*/
+textarea {
+    color: #FFFFFF;
+    resize: none;
+    background-color: #515151;
+}
+
+/*BUTTONS*/
+button {
+    color: white;
+    background: linear-gradient(#717171, #3D3D3D);
+    height: 20px;
+    width: 150px;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+}
+button:active {
+    outline: none;
+}
+button:focus {
+    outline: none;
 }

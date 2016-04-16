@@ -24,9 +24,9 @@ app.on('window-all-closed', function() {
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
     // Create the browser windows
-    mainWindow = new BrowserWindow({width: 400, height: 400});
+    mainWindow = new BrowserWindow({width: 400, height: 400, frame: false});
     // remove top menu
-    mainWindow.setMenu(null);
+    // mainWindow.setMenu(null);
     // and load the indext html of the app.
     mainWindow.loadURL(`file://${__dirname}/client/index.html`);
 
