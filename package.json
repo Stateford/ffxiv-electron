@@ -2,7 +2,7 @@
   "name": "ffxiv-electron",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
     "test": "electron app.js"
   },
@@ -12,5 +12,6 @@
     "gulp": "^3.9.1",
     "gulp-livereload": "^3.8.1",
     "gulp-run": "^1.6.12"
-  }
+  },
+  "dependencies": {}
 }
