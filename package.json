@@ -7,5 +7,10 @@
     "test": "electron app.js"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-run": "^1.6.12"
+  }
 }
