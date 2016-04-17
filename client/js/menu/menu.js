@@ -28,6 +28,7 @@ $(document).ready(function() {
     // clicking on about
     $('#about').click(function() {
         console.log('about');
+        window.open(`file://${__dirname}/about.html`);
     });
 
     // clicking on update
