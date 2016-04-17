@@ -24,7 +24,19 @@ app.on('window-all-closed', function() {
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
     // Create the browser windows
+
+    /*UNCOMMENT THIS FOR PRODUCTION
+    *
+    *
     mainWindow = new BrowserWindow({width: 400, height: 400, frame: false, resizable: false, maximizable: false});
+    *
+    */
+
+    // FOR DEV ONLY
+
+    mainWindow = new BrowserWindow({width: 400, height: 400});
+
+
     // remove top menu
     // mainWindow.setMenu(null);
     // and load the indext html of the app.
@@ -32,8 +44,7 @@ app.on('ready', function() {
 
     // Open the DevTools
     // for development
-    // mainWindow.webContents.openDevTools();
-
+    mainWindow.webContents.openDevTools();
     // Emitted when the window is closed
     mainWindow.on('closed', function() {
         // Dereference the window object, usually you would store windows

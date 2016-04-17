@@ -9,6 +9,12 @@ h1, h2, h3, h4, h5, p, a {
     margin: 0;
 }
 
+/*HIDDEN*/
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
 /*
 * MAIN BODY STYLE
 */
@@ -43,7 +49,7 @@ h1, h2, h3, h4, h5, p, a {
     display: inline-block;
 }
 
-#close {
+#menu {
     display: inline-block;
     float: right;
     margin-right: 10px;
@@ -56,6 +62,50 @@ h1, h2, h3, h4, h5, p, a {
     width: 20px;
     cursor: pointer;
     -webkit-app-region: no-drag;
+}
+
+#dropdownmenu {
+    display: inline-block;
+    font-size: 20px;
+    color: #D1D1D1;
+    vertical-align: bottom;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+.dropdownmenu {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+/*MENU ITEMS*/
+.menuitems {
+    border: 1px solid gray;
+    display: inline-block;
+    position: fixed;
+    right: 0;
+    top: 35px;
+    background-color: #2F2F2F;
+}
+
+.menuitems ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menuitems ul li {
+    cursor: pointer;
+    padding: 3px 10px;
+}
+
+.menuitems ul li:hover {
+    background-color: #414141;
+}
+
+.menuitems ul li p {
+    color: #D1D1D1;
 }
 
 /*BREAK*/
