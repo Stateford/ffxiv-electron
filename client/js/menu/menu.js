@@ -4,6 +4,8 @@
 "use strict";
 
 var menuopen = false;
+const electron = require('electron');
+const ipc = electron.ipcRenderer;
 
 $(document).ready(function() {
     // click anywhere outside menu
@@ -25,10 +27,17 @@ $(document).ready(function() {
         }
     });
 
+
+    // close about windows
+    $('#exitAbout').on('click', function() {
+        ipc.send('hide-about');
+    });
+
     // clicking on about
     $('#about').click(function() {
         console.log('about');
-        window.open(`file://${__dirname}/about.html`);
+        // window.open(`file://${__dirname}/about.html`, [{width: 400, height: 400, frame: false}]);
+        ipc.send('show-about');
     });
 
     // clicking on update

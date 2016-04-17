@@ -4,6 +4,7 @@
 'use strict';
 
 const electron = require('electron');
+const ipcMain = electron.ipcMain;
 const app = electron.app;   // Module to control application life.
 const BrowserWindow = electron.BrowserWindow;   // Module to create native browser window.
 
@@ -36,7 +37,6 @@ app.on('ready', function() {
 
     mainWindow = new BrowserWindow({width: 400, height: 400});
 
-
     // remove top menu
     // mainWindow.setMenu(null);
     // and load the indext html of the app.
@@ -52,4 +52,17 @@ app.on('ready', function() {
         // when you should delete the corresponding element
         mainWindow = null;
     });
+
+    // set up about window
+    var aboutWindow = new BrowserWindow({width: 400, height: 400, show: false});
+    aboutWindow.loadURL(`file://${__dirname}/client/about.html`);
+
+    ipcMain.on('show-about', function() {
+        aboutWindow.show();
+    });
+
+    ipcMain.on('hide-about', function() {
+        aboutWindow.hide();
+    });
+
 });
