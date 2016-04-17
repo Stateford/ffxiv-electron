@@ -3,13 +3,14 @@
 
 "use strict";
 
-var menuopen = false;
 const electron = require('electron');
 const ipc = electron.ipcRenderer;
+// var to check if the menu is currently open
+var menuopen = false;
 
 $(document).ready(function() {
     // click anywhere outside menu
-    $('body').click(function(event) {
+    $('body').on('click', function(event) {
         if(!$(event.taget).closest('.menuitems').length && !$(event.taget).is('.menuitems') && !$(event.target).closest('#dropdownmenu').length && !$(event.target).is('#dropdownmenu') && menuopen) {
             $('.menuitems').addClass('hidden');
             menuopen = false;
@@ -17,7 +18,7 @@ $(document).ready(function() {
     });
 
     // SHOW MENU ON CLICK
-    $('#dropdownmenu').click(function() {
+    $('#dropdownmenu').on('click', function() {
         if(!menuopen) {
             $('.menuitems').removeClass('hidden');
             menuopen = true;
@@ -27,22 +28,24 @@ $(document).ready(function() {
         }
     });
 
+    //  open about window
+    $('#about').on('click', function() {
+        ipc.send('show-about');
+    });
 
     // close about windows
     $('#exitAbout').on('click', function() {
         ipc.send('hide-about');
     });
 
-    // clicking on about
-    $('#about').click(function() {
-        console.log('about');
-        // window.open(`file://${__dirname}/about.html`, [{width: 400, height: 400, frame: false}]);
-        ipc.send('show-about');
+    // open update window
+    $('#update').on('click', function() {
+        ipc.send('show-update');
     });
 
-    // clicking on update
-    $('#update').click(function() {
-        console.log('update');
+    // close update window
+    $('#exitUpdate').on('click', function() {
+        ipc.send('hide-update');
     });
 
 });

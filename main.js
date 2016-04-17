@@ -26,16 +26,11 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
     // Create the browser windows
 
-    /*UNCOMMENT THIS FOR PRODUCTION
-    *
-    *
     mainWindow = new BrowserWindow({width: 400, height: 400, frame: false, resizable: false, maximizable: false});
-    *
-    */
 
     // FOR DEV ONLY
 
-    mainWindow = new BrowserWindow({width: 400, height: 400});
+    // mainWindow = new BrowserWindow({width: 400, height: 400});
 
     // remove top menu
     // mainWindow.setMenu(null);
@@ -44,7 +39,7 @@ app.on('ready', function() {
 
     // Open the DevTools
     // for development
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
     // Emitted when the window is closed
     mainWindow.on('closed', function() {
         // Dereference the window object, usually you would store windows
@@ -53,16 +48,35 @@ app.on('ready', function() {
         mainWindow = null;
     });
 
+    // ABOUT window
     // set up about window
-    var aboutWindow = new BrowserWindow({width: 400, height: 400, show: false});
+    var aboutWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false});
+    // point to about file
     aboutWindow.loadURL(`file://${__dirname}/client/about.html`);
-
+    // when browser sends show about
+    // show the window
     ipcMain.on('show-about', function() {
         aboutWindow.show();
     });
-
+    // when browser sends hide request
+    // hide the window
     ipcMain.on('hide-about', function() {
         aboutWindow.hide();
     });
 
+    // UPDATE WINDOW
+    // set up update window
+    var updateWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false});
+    // point to update file
+    updateWindow.loadURL(`file://${__dirname}/client/update.html`);
+    // when browser sends show update
+    // show the window
+    ipcMain.on('show-update', function() {
+        updateWindow.show();
+    });
+    // when browser sends hide request
+    // hide the window
+    ipcMain.on('hide-update', function() {
+        updateWindow.hide();
+    });
 });
