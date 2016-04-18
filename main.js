@@ -26,7 +26,7 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
     // Create the browser windows
 
-    mainWindow = new BrowserWindow({width: 400, height: 400, frame: false, resizable: false, maximizable: false});
+    mainWindow = new BrowserWindow({width: 410, height: 140, frame: false, resizable: false, maximizable: false, transparent: true});
 
     // FOR DEV ONLY
 
@@ -50,7 +50,7 @@ app.on('ready', function() {
 
     // ABOUT window
     // set up about window
-    var aboutWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false});
+    var aboutWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false, transparent: true});
     // point to about file
     aboutWindow.loadURL(`file://${__dirname}/client/about.html`);
     // when browser sends show about
@@ -66,7 +66,7 @@ app.on('ready', function() {
 
     // UPDATE WINDOW
     // set up update window
-    var updateWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false});
+    var updateWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false, transparent: true});
     // point to update file
     updateWindow.loadURL(`file://${__dirname}/client/update.html`);
     // when browser sends show update

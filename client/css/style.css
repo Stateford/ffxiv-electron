@@ -30,11 +30,12 @@ h1, h2, h3, h4, h5, p, a {
     border-width: 1px;
     border-style: solid;
     box-sizing: border-box;
+    border-radius: 20px;
 }
 
 /*MAINBODY*/
 .mainbody {
-    margin-left: 20px;
+    margin-left: 13px;
     margin-top: 10px;
 }
 
@@ -133,7 +134,7 @@ textarea {
 
 /*BUTTONS*/
 button {
-    color: white;
+    color: #D1D1D1;
     background: linear-gradient(#717171, #3D3D3D);
     height: 20px;
     width: 150px;
@@ -145,4 +146,20 @@ button:active {
 }
 button:focus {
     outline: none;
+}
+
+button:hover {
+    background: linear-gradient(#7e7c7c, #3D3D3D);
+    color: rgb(221, 221, 221);
+}
+
+.buttons {
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+/*ABOUT*/
+.about p {
+    color: #D1D1D1;
 }
