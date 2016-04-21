@@ -1,0 +1,19 @@
+{
+  "name": "ffxiv-electron",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "diietmoran",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-run": "^1.6.12"
+  },
+  "dependencies": {
+    "request": "^2.72.0"
+  }
+}
