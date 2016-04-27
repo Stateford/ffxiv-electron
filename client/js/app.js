@@ -8,16 +8,16 @@ window.$ = window.jQuery = require('./lib/jquery/dist/jquery.min.js');
 $(document).ready(() => {
     // define dictionary
     const dict = require('../dictionary/dictionary.json'),
-          translate = require('../scripts/translate');
+          scripts = require('../scripts');
 
     // on submit click
-    $('#submit').click(() => {
+    $('#submit').on('click', function() {
         var input = $('#textfield').val();
-        $('#output').val(translate(input));
+        $('#output').val(scripts.translate(input));
     });
 
     // close the window
-    $('#exit').click(function() {
+    $('#exit').on('click', function() {
         var window = remote.getCurrentWindow();
         window.close();
     });
