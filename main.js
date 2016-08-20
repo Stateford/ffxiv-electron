@@ -1,7 +1,4 @@
 // main.js
-/* jshint node: true, esversion: 6, browser: true*/
-
-'use strict';
 
 const electron = require('electron');
 const ipcMain = electron.ipcMain;
@@ -26,11 +23,14 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
     // Create the browser windows
 
+    /**
+     * NOTE: FOR PRODUCTION
+    */
     mainWindow = new BrowserWindow({width: 410, height: 140, frame: false, resizable: false, maximizable: false, transparent: true});
 
-    // FOR DEV ONLY
-
-    // mainWindow = new BrowserWindow({width: 400, height: 400});
+    // NOTE: FOR DEV ONLY
+    // mainWindow = new BrowserWindow({width: 800, height: 600});
+    // mainWindow.webContents.openDevTools();
 
     // remove top menu
     // mainWindow.setMenu(null);
@@ -39,7 +39,6 @@ app.on('ready', function() {
 
     // Open the DevTools
     // for development
-    // mainWindow.webContents.openDevTools();
     // Emitted when the window is closed
     mainWindow.on('closed', function() {
         // Dereference the window object, usually you would store windows
@@ -50,7 +49,12 @@ app.on('ready', function() {
 
     // ABOUT window
     // set up about window
+    // NOTE: for production
     var aboutWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false, transparent: true});
+
+    // NOTE: for dev
+    // var aboutWindow = new BrowserWindow({width: 400, height: 400});
+
     // point to about file
     aboutWindow.loadURL(`file://${__dirname}/client/about.html`);
     // when browser sends show about

@@ -1,7 +1,4 @@
 // scripts/translate.js
-/*jslint node: true*/
-/*jslint esnext: true*/
-"use strict";
 
 // MODULES
 const dictionary = require('../dictionary/dictionary.json'),

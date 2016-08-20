@@ -1,7 +1,4 @@
 // scripts/updateCheck.js
-/* jshint node: true, esversion: 6*/
-
-"use strict";
 
 // GET information from out link
 function updateCheck(current, latest) {

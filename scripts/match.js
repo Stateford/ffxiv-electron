@@ -1,9 +1,8 @@
 // match.js
-/*
+/**
+* @description
 * Checks if input matches
 */
-/* jshint node: true, esversion: 6 */
-"use strict";
 // MODULES
 // =======
 const dictionary = require('../dictionary/dictionary.json');

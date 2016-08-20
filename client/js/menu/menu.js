@@ -1,10 +1,12 @@
 // menu/menu.js
-/* jslint node: true, esversion: 6, browser: true, jquery: true*/
 
-"use strict";
+window.$ = window.jQuery = require('./lib/jquery/dist/jquery.min.js');
 
 const electron = require('electron');
 const ipc = electron.ipcRenderer;
+const shell = require('electron').shell;
+
+// const ipc = require('electron');
 // var to check if the menu is currently open
 var menuopen = false;
 
@@ -46,6 +48,10 @@ $(document).ready(function() {
     // close update window
     $('#exitUpdate').on('click', function() {
         ipc.send('hide-update');
+    });
+
+    $('#github').on('click', function() {
+        shell.openExternal("https://github.com/idietmoran/ffxiv-electron");
     });
 
 });

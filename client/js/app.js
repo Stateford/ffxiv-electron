@@ -1,7 +1,5 @@
 // translate.js
-/* jshint esversion: 6, node: true, jquery: true, browser: true*/
-"use strict";
-const remote = require('remote');
+const remote = require('electron').remote;
 
 window.$ = window.jQuery = require('./lib/jquery/dist/jquery.min.js');
 

@@ -163,3 +163,24 @@ button:hover {
 .about p {
     color: #D1D1D1;
 }
+
+.about ul {
+    list-style: none;
+}
+
+.about li {
+    margin-top: 10px;
+}
+
+.about a {
+    color: #D1D1D1;
+    text-decoration: underline;
+}
+
+.about a:hover {
+    color: rgb(221, 221, 221);
+}
+
+.about h4 {
+    color: #D1D1D1;
+}
