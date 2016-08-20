@@ -7,6 +7,11 @@
 // =======
 const dictionary = require('../dictionary/dictionary.json');
 
+/**
+ * @param {char} char : checks if character exists in the dictionary
+ * @returns {bool} 
+*/
+
 function match(char) {
     if(dictionary[char]) {
         return true;
