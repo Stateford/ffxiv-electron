@@ -1,12 +1,14 @@
 {
   "name": "ffxiv-electron",
+  "private": true,
   "version": "0.0.1",
+  "productName": "FFXIV Translate",
   "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js"
   },
-  "author": "diietmoran",
+  "author": "idietmoran <idietmoran@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",

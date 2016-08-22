@@ -1,4 +1,4 @@
-// translate.js
+// app.js
 const remote = require('electron').remote;
 
 window.$ = window.jQuery = require('./lib/jquery/dist/jquery.min.js');

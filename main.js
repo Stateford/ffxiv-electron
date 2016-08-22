@@ -4,10 +4,12 @@ const electron = require('electron');
 const ipcMain = electron.ipcMain;
 const app = electron.app;   // Module to control application life.
 const BrowserWindow = electron.BrowserWindow;   // Module to create native browser window.
+const update = require('./updater/update');
+
 
 // keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-var mainWindow = null;
+let mainWindow = null;
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
@@ -50,10 +52,10 @@ app.on('ready', function() {
     // ABOUT window
     // set up about window
     // NOTE: for production
-    var aboutWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false, transparent: true});
+    let aboutWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false, transparent: true});
 
     // NOTE: for dev
-    // var aboutWindow = new BrowserWindow({width: 400, height: 400});
+    // let aboutWindow = new BrowserWindow({width: 400, height: 400});
 
     // point to about file
     aboutWindow.loadURL(`file://${__dirname}/client/about.html`);
@@ -70,7 +72,7 @@ app.on('ready', function() {
 
     // UPDATE WINDOW
     // set up update window
-    var updateWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false, transparent: true});
+    let updateWindow = new BrowserWindow({width: 400, height: 400, show: false, resizable: false, maximizable:false, frame: false, transparent: true});
     // point to update file
     updateWindow.loadURL(`file://${__dirname}/client/update.html`);
     // when browser sends show update
@@ -82,5 +84,10 @@ app.on('ready', function() {
     // hide the window
     ipcMain.on('hide-update', function() {
         updateWindow.hide();
+    });
+
+    // check for updates
+    ipcMain.on('check-update', function() {
+        update();
     });
 });

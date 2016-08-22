@@ -175,6 +175,7 @@ button:hover {
 .about a {
     color: #D1D1D1;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .about a:hover {
@@ -182,5 +183,10 @@ button:hover {
 }
 
 .about h4 {
+    color: #D1D1D1;
+}
+
+/*UPDATE*/
+#currentVer {
     color: #D1D1D1;
 }
