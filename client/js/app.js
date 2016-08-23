@@ -10,13 +10,22 @@ $(document).ready(() => {
 
     // on submit click
     $('#submit').on('click', function() {
-        var input = $('#textfield').val();
+        let input = $('#textfield').val();
         $('#output').val(scripts.translate(input));
     });
 
+    // enter button
+    $('#textfield').on('keydown', function(e) {
+        if(e.which == 13) {
+            e.preventDefault();
+            let input = $('#textfield').val();
+            $('#output').val(scripts.translate(input));
+        }
+    });
+
     // close the window
-    $('#exit').on('click', function() {
-        var window = remote.getCurrentWindow();
+    $('#exit').on('click', function(e) {
+        let window = remote.getCurrentWindow();
         window.close();
     });
 });

@@ -12,7 +12,7 @@ const dictionary = require('../dictionary/dictionary.json'),
 function translate(str) {
     let input = str.split(''),
         final = ``;
-    for(var index in input) {
+    for(let index in input) {
         if(match(input[index])) {
             final += `${dictionary[input[index]]}`;
         } else {

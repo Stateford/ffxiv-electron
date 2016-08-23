@@ -2,7 +2,7 @@
 
 window.$ = window.jQuery = require('./lib/jquery/dist/jquery.min.js');
 
-var mousedown = false;
+let mousedown = false;
 // document ready
 $(document).ready(function() {
 

@@ -7,8 +7,8 @@ const ipc = electron.ipcRenderer;
 const shell = require('electron').shell;
 
 // const ipc = require('electron');
-// var to check if the menu is currently open
-var menuopen = false;
+// let to check if the menu is currently open
+let menuopen = false;
 
 $(document).ready(function() {
     // click anywhere outside menu
